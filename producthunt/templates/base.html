@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Eshank Vaish</title>
+    <title>Product Hunt</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -43,8 +43,7 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+  
   </head>
   <body>
     <header>
@@ -60,6 +59,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'create' %}">Add Product</a>
                   <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
                   <form id='logout' method="POST" action="{% url 'logout' %}">
                     {% csrf_token %}
