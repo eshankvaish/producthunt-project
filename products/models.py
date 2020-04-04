@@ -16,7 +16,9 @@ class Product(models.Model):
         return self.title
     
     def summary(self):
-        return self.body[:100]
+        if len(self.body)<75:
+            return self.body
+        return self.body[:75] + "..."
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')

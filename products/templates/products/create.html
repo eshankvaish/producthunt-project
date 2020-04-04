@@ -8,24 +8,30 @@
             {{  error }}
         <br>
         {% endif %}
-        <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+        <hr>
+        <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data"  style="max-width: 300px; margin-left: auto; margin-right: auto;">
             {% csrf_token %}
-            Title: <input type="text" name="title">
-            <br>
-            <br>
-            Body: <input type="textbox" name="body">
-            <br>
-            <br>
-            URL: <input type="url" name="url">
-            <br>
-            <br>
-            Icon: <input type="file" name="icon">
-            <br>
-            <br>
-            Image: <input type="file" name="image">
-            <br>
-            <br>
-            <input class="btn btn-primary" type="submit" value="Add Product">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title">
+              </div>
+              <div class="form-group">
+                <label>Body</label>
+                <textarea type="textarea" class="form-control" rows="5" name="body"></textarea>
+              </div>
+              <div class="form-group">
+                <label>URL</label>
+                <input type="url" class="form-control" name="url">
+              </div>
+              <div class="form-group">
+                <label>Icon</label>
+                <input type="file" class="form-control" name="icon">
+              </div>
+              <div class="form-group">
+                <label>Image</label>
+                <input type="file" class="form-control" name="image">
+              </div>
+                <input class="btn btn-primary" type="submit" value="Add Product">
         </form>
     </div>
 {% endblock %}
